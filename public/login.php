@@ -10,7 +10,7 @@ use App\Http\Controllers\WelcomeController;
 
 //include ('dbconn.php');
 
-if(isset($_POST['login'])){
+//if(isset($_POST['login'])){
 
     if(!empty($_POST['username']) && !empty($_POST['password'])){
         $username = $_POST['username'];
@@ -21,6 +21,8 @@ if(isset($_POST['login'])){
         $sth->execute(array($username,$password));
         $result = $sth->fetch(PDO::FETCH_NUM);
 
+
+        var_dump ($result);
         if($result){
             $result = null;
             echo "登入成功";
@@ -53,7 +55,7 @@ else{
 
     //echo $row;
 
-}
+//}
 
 ?>
 
